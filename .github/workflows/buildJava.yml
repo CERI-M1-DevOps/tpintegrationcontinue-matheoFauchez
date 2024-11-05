@@ -12,4 +12,4 @@ jobs:
         with:
           distribution: 'corretto'
           java-version: '21'
-      - run: mvn –B package
+      - run: 'mvn –B package'
