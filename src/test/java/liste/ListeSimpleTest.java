@@ -262,4 +262,18 @@ public class ListeSimpleTest {
         Noeud r1 = listeATester.tete;
         listeATester.echanger(r1, r1);
     }
+
+    @Test
+    public void modifiePremierSurListeVide()
+    {
+        listeATester.modifiePremier(1, 1);
+        assertEquals("ListeSimple()", listeATester.toString());
+    }
+
+    @Test
+    public void supprimerPremierSurListeVide()
+    {
+        listeATester.supprimePremier(1);
+        assertEquals("ListeSimple()", listeATester.toString());
+    }
 }
