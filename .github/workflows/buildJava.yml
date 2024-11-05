@@ -1,11 +1,13 @@
-name: Java CI with Maven - Test and package
+name: Java CI with Maven - Test and package + Sonar
+
 env:
   SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
 on: [pull_request] #Se déclenche sur une pull request
 
 jobs:
   TestAndPackage:
-    name: Java CI with Maven - Test and package
+    name: Java CI with Maven - Test and package + Sonar
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
