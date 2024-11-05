@@ -1,0 +1,17 @@
+name: JavaDoc Generation
+
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  JDocGeneration:
+    name: JavaDoc Generation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate JavaDoc
+        run: mvn -B javadoc::javadoc
+
+      - name: Deploy JavaDoc
+        uses: actions/actions-gh-pages@v4
