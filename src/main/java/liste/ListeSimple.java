@@ -36,7 +36,6 @@ public class ListeSimple {
         sb.append(")");
         return sb.toString();
     }
-
     public void supprimePremier(Object element) {
         if (tete != null) {
             if (tete.getElement() == element) {
