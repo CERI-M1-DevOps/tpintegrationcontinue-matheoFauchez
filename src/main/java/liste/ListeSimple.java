@@ -2,9 +2,18 @@ package liste;
 public class ListeSimple {
     private long size;
     Noeud tete;
+
+    /**
+     * @return the list size
+     */
     public long getSize() {
         return size;
     }
+
+    /**
+     * Insert an element into the list
+     * @param element
+     */
     public void ajout(int element) {
         tete = new Noeud(element, tete);
         size++;
