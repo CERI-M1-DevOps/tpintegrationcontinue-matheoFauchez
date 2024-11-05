@@ -271,10 +271,11 @@ public class ListeSimpleTest {
     }
 
     @Test
-    public void supprimerPremierListe1Element()
+    public void supprimerPremierListe2Elements()
     {
         listeATester.ajout(1);
+        listeATester.ajout(2);
         listeATester.supprimePremier(1);
-        assertEquals("ListeSimple()", listeATester.toString());
+        assertEquals("ListeSimple(Noeud(2))", listeATester.toString());
     }
 }
