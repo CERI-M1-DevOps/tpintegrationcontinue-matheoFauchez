@@ -32,3 +32,5 @@ jobs:
 
       - name: Deploy JavaDoc
         uses: peaceiris/actions-gh-pages@v4
+        with:
+          publish_dir: ./target/reports/apidocs
