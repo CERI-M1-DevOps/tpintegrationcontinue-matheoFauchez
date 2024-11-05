@@ -274,8 +274,9 @@ public class ListeSimpleTest {
     public void supprimerPremierListePlusieursFoisElement()
     {
         listeATester.ajout(1);
+        listeATester.ajout(3);
         listeATester.ajout(1);
         listeATester.supprimePremier(1);
-        assertEquals("ListeSimple(Noeud(1))", listeATester.toString());
+        assertEquals("ListeSimple(Noeud(3), Noeud(1))", listeATester.toString());
     }
 }
