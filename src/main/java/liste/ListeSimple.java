@@ -1,4 +1,8 @@
 package liste;
+
+/**
+ * Class to use a simple list
+ */
 public class ListeSimple {
     private long size;
     Noeud tete;
