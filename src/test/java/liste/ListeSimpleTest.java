@@ -259,8 +259,12 @@ public class ListeSimpleTest {
     @Test
     public void echangerLesDeuxMemesNoeuds()
     {
+        listeATester.ajout(1);
+        listeATester.ajout(2);
+        ListeSimple listeAvantEchange = listeATester;
         Noeud r1 = listeATester.tete;
         listeATester.echanger(r1, r1);
+        assertEquals(listeAvantEchange, listeATester);
     }
 
     @Test
@@ -271,11 +275,10 @@ public class ListeSimpleTest {
     }
 
     @Test
-    public void supprimerPremierListe2Elements()
+    public void supprimerElementInexistant()
     {
         listeATester.ajout(1);
-        listeATester.ajout(2);
-        listeATester.supprimePremier(1);
-        assertEquals("ListeSimple(Noeud(2))", listeATester.toString());
+        listeATester.supprimePremier(2);
+        assertEquals("ListeSimple(Noeud(1))", listeATester.toString());
     }
 }
