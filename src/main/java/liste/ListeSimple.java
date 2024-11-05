@@ -12,12 +12,18 @@ public class ListeSimple {
 
     /**
      * Insert an element into the list
-     * @param element
+     * @param element the element we want to insert
      */
     public void ajout(int element) {
         tete = new Noeud(element, tete);
         size++;
     }
+
+    /**
+     * Modify the first elementfound in list by nouvelleValeur
+     * @param element the element we want to replace
+     * @param nouvelleValeur the new element we want to insert at the first place
+     */
     public void modifiePremier(Object element, Object nouvelleValeur) {
         Noeud courant = tete;
         while (courant != null && courant.getElement() != element)
@@ -25,6 +31,12 @@ public class ListeSimple {
         if (courant != null)
             courant.setElement(nouvelleValeur);
     }
+
+    /**
+     * Modify every element found by nouvelleValeur
+     * @param element the element we want to replace
+     * @param nouvelleValeur the one we want to set instead of each element
+     */
     public void modifieTous(Object element, Object nouvelleValeur) {
         Noeud courant = tete;
         while (courant != null) {
@@ -33,6 +45,11 @@ public class ListeSimple {
             courant = courant.getSuivant();
         }
     }
+
+    /**
+     * Print a list
+     * @return String
+     */
     public String toString() {
         StringBuilder sb = new StringBuilder("ListeSimple(");
         Noeud n = tete;
@@ -46,6 +63,10 @@ public class ListeSimple {
         return sb.toString();
     }
 
+    /**
+     * Delete the first element found in list
+     * @param element the one we want to delete
+     */
     public void supprimePremier(Object element) {
         if (tete != null) {
             if (tete.getElement() == element) {
@@ -65,9 +86,21 @@ public class ListeSimple {
             }
         }
     }
+
+    /**
+     * Delete every element found in list
+     * @param element the element we want to delete
+     */
     public void supprimeTous(int element) {
         tete = supprimeTousRecurs(element, tete);
     }
+
+    /**
+     * Delete every element found in list but recursively
+     * @param element the element we want to delete
+     * @param tete the first element in our list
+     * @return an element
+     */
     public Noeud supprimeTousRecurs(Object element, Noeud tete) {
         if (tete != null) {
             Noeud suiteListe = supprimeTousRecurs(element, tete.getSuivant());
@@ -80,6 +113,11 @@ public class ListeSimple {
             }
         } else return null;
     }
+
+    /**
+     * Get the penultimate element in list
+     * @return Noeud
+     */
     public Noeud getAvantDernier() {
         if (tete == null || tete.getSuivant() == null)
             return null;
@@ -93,6 +131,10 @@ public class ListeSimple {
             return courant;
         }
     }
+
+    /**
+     * Reverse a list
+     */
     public void inverser() {
         Noeud precedent = null;
         Noeud courant = tete;
@@ -104,6 +146,12 @@ public class ListeSimple {
         }
         tete = precedent;
     }
+
+    /**
+     * Get the previous element (the one preceding r)
+     * @param r the element for which we want the previous one
+     * @return Noeud
+     */
     public Noeud getPrecedent(Noeud r) {
         // la liste n'est pas vide puisqu'on transmet un Node de la liste et le Node existe obligatoirement
         Noeud precedent = tete;
@@ -114,6 +162,12 @@ public class ListeSimple {
         }
         return precedent;
     }
+
+    /**
+     * Switch two elements in a list
+     * @param r1 the first element
+     * @param r2 the second element
+     */
     public void echanger(Noeud r1, Noeud r2) {
         if (r1 == r2)
         {
