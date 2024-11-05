@@ -52,11 +52,11 @@ public class ListeSimple {
             }
             Noeud precedent = tete;
             Noeud courant = tete.getSuivant();
-            while (courant != null && courant.getElement() != element && courant.getSuivant()!=null) {
+            while (courant != null && courant.getElement() != element) {
                 precedent = precedent.getSuivant();
                 courant = courant.getSuivant();
             }
-            if (courant != null && courant.getSuivant()!=null) {
+            if (courant != null) {
                 precedent.setSuivant(courant.getSuivant());
                 size--;
             }
